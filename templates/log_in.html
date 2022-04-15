@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/css/row_col.css" />
+    <link rel="stylesheet" href="../static/css/navbar.css" />
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/form.css" />
+
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="content row">
+      <div class="col content__main" style="width: 410px">
+        <form method="POST" class="" style="padding: 30px">
+          <div class="left">
+            <div class="form__group">
+              <h1>Login</h1>
+            </div>
+            <div class="form__group">
+              <label for="input_email">Username</label>
+              <input
+                class="form__input"
+                type="text"
+                name="username"
+                placeholder="Username"
+              />
+            </div>
+            <div class="form__group">
+              <label for="input_email">Password</label>
+              <input
+                class="form__input"
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </div>
+            <div class="form__group">
+              <button class="form__button">Login</button>
+            </div>
+            <div class="form__group">
+              <p>
+                Don't have an account? Sign up as a
+                <a href="/sign_up_visitor">visitor</a> or as a
+                <a href="/sign_up_place">place owner</a>.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

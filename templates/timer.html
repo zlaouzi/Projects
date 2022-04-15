@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      #seconds {
+        font-size: 5em;
+      }
+      #minutes {
+        font-size: 5em;
+      }
+      #colon {
+        font-size: 5em;
+      }
+    </style>
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/row_col.css" />
+    <link rel="stylesheet" href="../static/css/form.css" />
+    <link rel="stylesheet" href="../static/css/navbar.css" />
+
+    <title>Timer</title>
+  </head>
+
+  <body>
+    <div class="content">
+      <form method="POST" class="form">
+        <label id="minutes" name="minutes" style="color: #3f4045">00</label>
+        <label id="colon" style="color: #3f4045">:</label>
+        <label id="seconds" name="seconds" style="color: #3f4045">00</label>
+        <h1>You are currently located at {{data}}</h1>
+        <div class="form__group">
+          <button class="form__button" type="submit" onclick="history.back()">
+            LOG OUT
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      var minutesLabel = document.getElementById("minutes");
+      var secondsLabel = document.getElementById("seconds");
+      var totalSeconds = 0;
+      setInterval(setTime, 1000);
+      function setTime() {
+        ++totalSeconds;
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+      }
+      function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+          return "0" + valString;
+        } else {
+          return valString;
+        }
+      }
+    </script>
+  </body>
+</html>

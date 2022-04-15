@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/row_col.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/form.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/navbar.css') }}"
+    />
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/row_col.css" />
+    <link rel="stylesheet" href="../static/css/form.css" />
+    <link rel="stylesheet" href="../static/css/navbar.css" />
+
+    <title>User updated</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col content__main" style="width: 410px">
+        <h1>Welcome</h1>
+        <form action="/" method="POST">
+          <div class="form__group">
+            <button class="form__button" type="submit">Next</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

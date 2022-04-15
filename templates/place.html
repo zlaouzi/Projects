@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <style>
+      #qrcode {
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        height: 500px;
+        border: 7px solid white;
+        margin-top: 1px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/row_col.css" />
+    <link rel="stylesheet" href="../static/css/form.css" />
+    <link rel="stylesheet" href="../static/css/navbar.css" />
+
+    <title>Place</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/davidshimjs-qrcodejs@0.0.2/qrcode.min.js"></script>
+
+    <div class="row">
+      <div class="col content__main">
+        <h1>This is a place</h1>
+        <input
+          id="text"
+          type="text"
+          value="https://10.72.1.14:8080/timer/{{data}}"
+          style="width: 80%"
+          hidden
+        /><br />
+        <div id="qrcode"></div>
+        <a style="margin-bottom: 25px" id="qrdl" hidden>Download QR code</a>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      const makeQR = (url, filename) => {
+        var qrcode = new QRCode("qrcode", {
+          text: "http://jindo.dev.naver.com/collie",
+          width: 500,
+          height: 500,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H,
+        });
+        qrcode.makeCode(url);
+
+        setTimeout(() => {
+          let qelem = document.querySelector("#qrcode img");
+          let dlink = document.querySelector("#qrdl");
+          let qr = qelem.getAttribute("src");
+          dlink.setAttribute("href", qr);
+          dlink.setAttribute("download", "filename");
+          dlink.removeAttribute("hidden");
+        }, 500);
+      };
+
+      makeQR(document.querySelector("#text").value, "qr-code.png");
+    </script>
+  </body>
+</html>

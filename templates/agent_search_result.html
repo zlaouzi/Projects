@@ -1,0 +1,22 @@
+<html>
+	<head>
+			<link rel="stylesheet" href="../static/css/main.css"/>
+        <link rel="stylesheet" href="../static/css/row_col.css"/>
+        <link rel="stylesheet" href="../static/css/form.css"/>
+        <link rel="stylesheet" href="../static/css/navbar.css"/>
+		<title>Search Results</title>
+	</head>
+<body>
+	<div class="row">
+		<div class="col content__main">
+			<h1>RESULT</h1>
+			{% for item in data %}
+			<div class="item">
+				<p> {{item[0]}}</label>
+				<p>Current Status: {{item[1]}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>

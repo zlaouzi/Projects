@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #818ded;
+      }
+      .result {
+        background-color: green;
+        color: #fff;
+        padding: 20px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../static/css/row_col.css" />
+    <link rel="stylesheet" href="../static/css/form.css" />
+    <link rel="stylesheet" href="../static/css/navbar.css" />
+
+    <title>Scan</title>
+  </head>
+
+  <body>
+    <script src="https://reeteshghimire.com.np/wp-content/uploads/2021/05/html5-qrcode.min_.js"></script>
+
+    <div class="row">
+      <div class="col content__main">
+        <h1>Hello there visitor {{data}}</h1>
+        <div class="row">
+          <div class="col">
+            <div style="width: 500px" id="reader"></div>
+          </div>
+          <div class="col">
+            <h4>Scan Result</h4>
+            <div id="result">The scan result will appear here</div>
+          </div>
+        </div>
+        <div class="row">
+          <form class="form__group" action="logout">
+            <button class="form__button" style="padding: 12px 1px">
+              LOG OUT
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function onScanSuccess(qrCodeMessage) {
+        document.getElementById("result").innerHTML =
+          '<form method="POST"><input type="submit" class="result" name="final_result" value="' +
+          qrCodeMessage +
+          '"></input></form>';
+      }
+      function onScanError(errorMessage) {
+        //handle scan error
+      }
+      var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+        fps: 10,
+        qrbox: 250,
+      });
+      html5QrcodeScanner.render(onScanSuccess, onScanError);
+    </script>
+  </body>
+</html>

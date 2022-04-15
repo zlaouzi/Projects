@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/css/row_col.css" />
+    <link rel="stylesheet" href="../static/css/form.css" />
+    <link rel="stylesheet" href="../static/css/navbar.css" />
+    <link rel="stylesheet" href="../static/css/main.css" />
+
+        <title>Result: Search place</title>
+    </head>
+<body>
+    <div class="row">
+        <div class="col content__main">
+            <p>{{data_1}}</p>
+            <h2> List of people that have been in this place</h2>
+            {% for item in data_2 %}  
+            <div class="item">
+                <h3>{{item[0]}}</h3>
+                <h4>{{item[1]}}</h4>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

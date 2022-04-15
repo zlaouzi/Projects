@@ -1,0 +1,88 @@
+.form {
+  border-radius: 10px;
+  color: rgb(254, 254, 254);
+  background-color: white;
+  max-width: 590px;
+  margin: 10px auto;
+  border-radius: 5px;
+  padding: 20px 30px 40px 30px;
+  margin-top: -60px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.form__group > button {
+  font-size: medium;
+}
+.form__group > h2 {
+  text-align: center;
+  color: gray;
+  text-size-adjust: large;
+}
+
+.form__group > label {
+  flex-direction: row;
+  text-align: left;
+  width: 100px;
+  color: gray;
+}
+
+.form__input {
+  width: 80%;
+  padding: 10px;
+  margin: 2px 0 2px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form__radioGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.form__radioButton {
+  margin-right: 15px;
+}
+
+.form__radioButton > input[type="radio"]:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  top: -5px;
+  left: -4px;
+  position: relative;
+  background-color: var(--color-5);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid var(--color-1);
+}
+
+.form__radioButton > input[type="radio"]:checked:after {
+  position: relative;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid;
+}
+
+.form__button {
+  background-color: rgb(152, 109, 128);
+  color: white;
+  border-radius: 13px;
+  border: 2px solid;
+  padding: 22px 1px;
+  flex: 1;
+  margin-top: 15px;
+}
+
+.form__button:hover {
+  background-color: #818ded;
+  color: white;
+}

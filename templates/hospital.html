@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../static/css/main.css"/>
+        <link rel="stylesheet" href="../static/css/row_col.css"/>
+        <link rel="stylesheet" href="../static/css/form.css"/>
+        <link rel="stylesheet" href="../static/css/navbar.css"/>
+
+		<title>Hospital Homepage</title>
+	</head>
+	<body>
+		<div class="row">
+			<div class="col content__main">
+				<div class="row">
+					<div class="col">
+						{% for item in data %}
+						<form action="#" class="item" method="POST">
+							<div class="form__group">
+								<input type="hidden" name="user_name" value={{item[0]}}></input>
+								<label for="infect_status"> {{item[0]}}</label>
+							</div>
+							<div class="form__group">
+								<p>Current Status: {{item[1]}}</p>
+							</div>
+							<div class="form__group">
+								<select class="form__button" name="infect_status" id="infect_status">
+									<option value="POSITIVE">POSITIVE</option>
+									<option value="NEGATIVE">NEGATIVE</option>
+								</select>
+							</div>
+							<div class="form__group">
+								<button class="form__button" type="submit">Save Changes</button>
+							</div>
+						</form>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

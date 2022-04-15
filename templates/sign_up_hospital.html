@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/form.css" />
+
+    <title>Hospital Signup</title>
+  </head>
+
+  <body>
+    <div class="content">
+      <form class="form" method="POST">
+        <div class="form__group">
+          <h2>Hospital Signup</h2>
+        </div>
+        <div class="form__group" id="container_input_email">
+          <label for="hospital_name"><b>Hospital name</b></label>
+          <input
+            class="form__input"
+            type="text"
+            placeholder="Enter the name of the hospital"
+            name="hospital_name"
+            required
+          />
+        </div>
+        <div class="form__group">
+          <label for="hospital_password"><b>Password</b></label>
+          <input
+            class="form__input"
+            type="password"
+            placeholder="Enter Password"
+            name="hospital_password"
+            required
+          />
+        </div>
+        <div class="form__group" style="margin: 0">
+          <button class="form__button" type="submit" style="padding: 14px 1px">
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
